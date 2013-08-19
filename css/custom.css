@@ -1,0 +1,187 @@
+/* Global */
+html {
+    color: white;
+}
+.page--master {
+    background-color: black;
+}
+.page--favorites {
+    background-color: rgb(2, 16, 49);
+}
+.page--categories {
+    background-color: rgb(44, 23, 2);
+}
+h1 {
+    font-size: 1.5em;
+}
+h4 {
+    margin: 1.2em 0 0 0;
+    padding: .1em .5em;
+    font-size: .8em;
+    text-transform: uppercase;
+    color: rgb(150, 141, 125);
+    border-bottom: 2px solid rgb(23, 75, 92);
+}
+
+a {
+    color: rgb(255, 173, 0);
+    text-decoration: none;
+}
+
+.container {
+    padding: .5em 0 1em;
+}
+nav {
+    text-align: center;
+    margin-bottom: 1em;
+}
+.nav-link {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    margin-right: 10px;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.item {
+    display: block;
+    width: 100%;
+    position: relative;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: middle;
+    overflow: hidden;
+}
+    .item--even {
+        background-color: rgba(255,255,255,.1);
+    }
+    .struck label {
+        text-decoration: line-through;
+        color: lightgray;
+    }
+    .item label {
+        display: inline-block;
+        top: 0;
+        width: 90%;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+    .item input {
+        display: inline-block;
+        margin-left: .5em;
+        cursor: pointer;
+    }
+.field-label {
+    font-size: .7em;
+    text-transform: uppercase;
+    text-align: right;
+    padding-right: .5em;
+}
+.button-bank {
+    text-align: center;
+}
+.button {
+    -webkit-appearance: none;
+    border-radius: 0;
+    height: 2.5em;
+    color: rgba(0,0,0,.6);
+    font-weight: bold;
+    background-color: #6395A2;
+    border: 2px solid rgba(78, 76, 76, 0.5);
+    margin: 1%;
+    border-radius: 4px;
+}
+    .button--small {
+        height: 1.8em;
+        font-size: .9em;
+    }
+        .page--categories .button--add {
+            margin-left: .5em;
+        }
+    .button--edit {
+        font-size: 0;
+        border: 0;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        display: inline-block;
+        background-color: transparent;
+        color: transparent;
+        background-image: url('edit.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 6%;
+        height: 38px;
+    }
+    .button--add-favs {
+        width: 15%;
+        padding: 0;
+        background-color: #DAAF42;
+    }
+    .button--clear {
+        width: 96%;
+        background-color: darkred;
+        margin: 2% 0;
+        color: rgba(255,255,255,.9);
+    }
+    .button--add-new {
+        width: 75%;
+    } 
+    
+    
+input.field--id {
+    visibility: hidden;
+    position: absolute;
+}
+
+    .form--add-favs {
+        display: inline;
+    }
+
+.edit-item {
+    margin-bottom: .5em;
+}
+.add-category {
+    margin: 10px auto 0;
+}
+.form--new-item {
+    margin: 1em 0;
+}
+@media screen and (max-width: 600px) {	
+    body {
+        font-size: 12pt;
+    }
+    .item {
+        font-size: 12pt;
+    }
+    .item label {
+        padding: .8em .4em;
+    }
+    input[type=text] {
+        max-width: 8em;
+    }
+    .button--edit {
+        margin: 5px;
+    }
+
+}
+
+@media screen and (min-width: 601px) {	
+    body {
+        font-size: 12pt;
+    }
+    .container {
+        margin: 0 auto;
+        max-width: 700px;
+    }
+    .item label {
+        padding: .5em .25em;
+    }
+    .button--edit {
+        margin: 0;
+    }
+}
