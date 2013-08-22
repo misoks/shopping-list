@@ -16,7 +16,7 @@
         }
     }
     if (isset($_POST['delete'])) {
-        delete_marked();
+        delete_marked('Categories');
     }
     
 ?>
