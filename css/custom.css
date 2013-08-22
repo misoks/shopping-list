@@ -2,6 +2,9 @@
 html {
     color: white;
 }
+body {
+    font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+}
 .page--master {
     background-color: black;
 }
