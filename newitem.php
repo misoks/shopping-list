@@ -9,7 +9,7 @@
         <td class="field-label"><label for="category-list">Category</label></td>
         <td class="field-cell">
             <select name="category" id="category-list">
-            <option value=""></option>
+            <option value="0">——</option>
             <?php
                 $result = mysql_query("SELECT name, id FROM Categories");
                 while ( $row = mysql_fetch_row($result) ) {

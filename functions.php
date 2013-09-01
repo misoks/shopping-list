@@ -22,7 +22,12 @@ function navLink($url, $linktext) {
 // Add items to any list
 function add_item($table) {
     $item = mysql_real_escape_string($_POST['item']);
-    $category = mysql_real_escape_string($_POST['category']);
+    if (isset($_POST['category'])) {
+        $category = mysql_real_escape_string($_POST['category']);
+    }
+    else {
+        $category = '0';
+    }
     $sql = "INSERT INTO $table (name, category) 
               VALUES ('$item', $category)";
 	mysql_query($sql);
@@ -67,7 +72,7 @@ function list_contents($table, $cat_id) {
         else {
             $notes = (htmlentities($row[3]));
         }
-        if( $marked == '1' ) {
+        if ( $marked == '1' ) {
             $status = "checked";
             $class = "struck";
         }
