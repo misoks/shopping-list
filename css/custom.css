@@ -65,7 +65,7 @@ nav {
 .fav > label {
     color: white;
 } 
-.list--categories .item {
+.list--categories .item > label {
     color: white;
 }
     .item--even {
