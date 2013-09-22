@@ -58,9 +58,11 @@ nav {
     box-sizing: border-box;
     vertical-align: middle;
     overflow: hidden;
+}
+.item > label {
     color: #5DCFEC;
 }
-.fav {
+.fav > label {
     color: white;
 } 
 .list--categories .item {

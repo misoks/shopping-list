@@ -134,7 +134,7 @@ function list_contents($table, $cat_id) {
                 
                 echo '<td class="field-entry">
                         <input type="text" name="notes" id="item-notes" class="field field--notes" value="'.$notes.'">
-                    </td>
+                    </td></tr><tr><td></td>
                     <td>
                         <input type="submit" name="edit-save" value="Save" class="button button--small button--save-item">
                     </td>
