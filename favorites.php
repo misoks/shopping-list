@@ -22,9 +22,10 @@
         delete_marked('Favorites');
     }
     if (isset($_POST['edit-save'])) {
+        $category = $_POST['category'];
         $notes = $_POST['notes'];
         $id = $_POST['item-id'];
-        edit_item($id, $notes, 'Favorites');
+        edit_item($id, $notes, $category, 'Favorites');
     }
     
 ?>

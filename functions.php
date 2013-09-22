@@ -56,6 +56,27 @@ function list_category($table) {
     }
 }
 
+//Drop-down list of all categories
+function category_select($table, $item_id) {
+    echo "<select name='category' id='item-cat'>
+            <option value='0'>——</option>";
+    $result = mysql_query("SELECT name, id FROM Categories");
+    $result2 = mysql_query("SELECT category FROM $table WHERE id ='$item_id'");
+    while ( $row = mysql_fetch_row($result2) ) {
+        $current = (htmlentities($row[0]));
+    }
+    while ( $row = mysql_fetch_row($result) ) {
+        $category = (htmlentities($row[0]));
+        $cat_id = (htmlentities($row[1]));
+        echo "<option value='$cat_id'";
+        if ($cat_id == $current) {
+            echo " selected";
+        }
+        echo ">$category</option>";
+    }
+echo "</select>";
+}
+
 // Lists contents of any list
 function list_contents($table, $cat_id) {
     if ($cat_id === FALSE) {
@@ -98,12 +119,27 @@ function list_contents($table, $cat_id) {
             <form method='post' enctype='multipart/form-data' id='form-$id' class='form--edit-item'>
             <table class='edit-item form'>
                 <tr>
-                <td class='field-label'><input type='text' name='item-id' class='field field--id' value='$id'>
-                <label for='item-notes'>Notes</label></td>";
-                
-                echo '<td><input type="text" name="notes" id="item-notes" class="field field--notes" value="'.$notes.'"></td>
-                <td><input type="submit" name="edit-save" value="Save" class="button button--small button--save-item"></td>
+                    <td class='field-label'>
+                        <label for='item-cat'>Category</label>
+                    </td>
+                    <td class='field-entry'>";
+                    category_select($table, $id);
+                    echo "</td>
                 </tr>
+                <tr>
+                    <td class='field-label'>
+                        <input type='text' name='item-id' class='field field--id' value='$id'>
+                        <label for='item-notes'>Notes</label>
+                    </td>";
+                
+                echo '<td class="field-entry">
+                        <input type="text" name="notes" id="item-notes" class="field field--notes" value="'.$notes.'">
+                    </td>
+                    <td>
+                        <input type="submit" name="edit-save" value="Save" class="button button--small button--save-item">
+                    </td>
+                </tr>
+                
             </table>
             </form>';
         }

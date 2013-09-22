@@ -28,9 +28,10 @@
         select_all();
     }
     if (isset($_POST['edit-save'])) {
+        $category = $_POST['category'];
         $notes = $_POST['notes'];
         $id = $_POST['item-id'];
-        edit_item($id, $notes, 'Items');
+        edit_item($id, $notes, $category, 'Items');
     }
     
     

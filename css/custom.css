@@ -58,7 +58,13 @@ nav {
     box-sizing: border-box;
     vertical-align: middle;
     overflow: hidden;
-    color: #6395A2;
+    color: #5DCFEC;
+}
+.fav {
+    color: white;
+} 
+.list--categories .item {
+    color: white;
 }
     .item--even {
         background-color: rgba(255,255,255,.1);
@@ -70,21 +76,23 @@ nav {
     .item label {
         display: inline-block;
         top: 0;
-        width: 90%;
         cursor: pointer;
         box-sizing: border-box;
     }
     .item input {
         display: inline-block;
-        margin-left: .5em;
         cursor: pointer;
     }
+.field-entry {
+    padding-left: 0em;
+}
 .field-label {
     font-size: .7em;
     text-transform: uppercase;
     text-align: right;
-    padding-right: .5em;
+    padding-right: .3em;
 }
+
 .button-bank {
     text-align: center;
 }
@@ -106,7 +114,7 @@ nav {
         .page--categories .button--add {
             margin-left: .5em;
         }
-    .button--edit {
+    .button.button--edit {
         font-size: 0;
         border: 0;
         padding: 0;
@@ -136,9 +144,7 @@ nav {
         width: 75%;
     } 
     
-.fav {
-    color: white;
-}  
+ 
 input.field--id {
     visibility: hidden;
     position: absolute;
@@ -174,7 +180,7 @@ input.field--id {
         margin: 5px;
     }
     .button {
-        height: 3.5em;
+        height: 2.8em;
     }
 
 }
