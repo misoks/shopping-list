@@ -159,7 +159,12 @@ function add_favs() {
 }
 
 function edit_item($id, $notes, $category, $table) {
-    $sql = "UPDATE $table SET notes = '$notes', category = '$category' WHERE id = '$id'";
+    if ($table == 'Items') {
+        $sql = "UPDATE $table SET notes = '$notes', category = '$category', favorite = '0' WHERE id = '$id'";
+    }
+    else {
+        $sql = "UPDATE $table SET notes = '$notes', category = '$category' WHERE id = '$id'";
+    }
     mysql_query($sql);
 }
 
