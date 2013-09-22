@@ -18,9 +18,10 @@ CREATE TABLE `Categories` (
 CREATE TABLE `Favorites` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
-  `marked` tinyint(4) NOT NULL DEFAULT '0',
+  `marked` tinyint(1) NOT NULL DEFAULT '0',
   `category` int(11) NOT NULL,
   `notes` text NOT NULL,
+  `favorite` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=46 ;
 
@@ -37,5 +38,6 @@ CREATE TABLE `Items` (
   `marked` tinyint(1) NOT NULL,
   `category` int(11) NOT NULL,
   `notes` text NOT NULL,
+  `favorite` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=507 ;

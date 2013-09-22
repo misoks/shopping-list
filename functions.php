@@ -28,8 +28,14 @@ function add_item($table) {
     else {
         $category = '0';
     }
-    $sql = "INSERT INTO $table (name, category) 
-              VALUES ('$item', $category)";
+    if ($table == "Favorites") {
+        $sql = "INSERT INTO $table (name, category, favorite) 
+              VALUES ('$item', $category, '1')";
+    }
+    else {
+        $sql = "INSERT INTO $table (name, category) 
+                  VALUES ('$item', $category)";
+    }
 	mysql_query($sql);
 }
 
@@ -56,7 +62,7 @@ function list_contents($table, $cat_id) {
         $sql = "SELECT name, id, marked FROM $table ORDER BY name ASC";
     }
     else {
-        $sql = "SELECT name, id, marked, notes FROM $table WHERE category = '$cat_id' ORDER BY name ASC";
+        $sql = "SELECT name, id, marked, notes, favorite FROM $table WHERE category = '$cat_id' ORDER BY name ASC";
     }
     $result = mysql_query($sql);
     $oddeven = "odd";
@@ -66,6 +72,7 @@ function list_contents($table, $cat_id) {
         $item = (htmlentities($row[0]));
         $id = (htmlentities($row[1]));
         $marked = (htmlentities($row[2]));
+        $fav = (htmlentities($row[4]));
         if ($cat_id === FALSE) {
             $notes = '';
         }
@@ -75,6 +82,9 @@ function list_contents($table, $cat_id) {
         if ( $marked == '1' ) {
             $status = "checked";
             $class = "struck";
+        }
+        if ($fav == TRUE) {
+              $class = $class." fav";
         }
         echo   "<li class='item item--$oddeven $class'>
                     <input type='checkbox' name='marked' class='check--$table marked-input' id='item-$id' value='$id' $status>
@@ -108,12 +118,12 @@ function list_contents($table, $cat_id) {
 
 // Adds favorite items to grocery list
 function add_favs() {
-    $sql = "INSERT INTO Items (name, category, notes) SELECT name, category, notes FROM Favorites";
+    $sql = "INSERT INTO Items (name, category, notes, favorite) SELECT name, category, notes, favorite FROM Favorites";
     mysql_query($sql);
 }
 
-function edit_item($id, $notes, $table) {
-    $sql = "UPDATE $table SET notes = '$notes' WHERE id = '$id'";
+function edit_item($id, $notes, $category, $table) {
+    $sql = "UPDATE $table SET notes = '$notes', category = '$category' WHERE id = '$id'";
     mysql_query($sql);
 }
 
@@ -129,7 +139,6 @@ function add_cat() {
     $sql = "INSERT INTO Categories (name) 
               VALUES ('$item')";
 	mysql_query($sql);
-	
 }
 
 ?>

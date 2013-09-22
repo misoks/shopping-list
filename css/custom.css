@@ -58,6 +58,7 @@ nav {
     box-sizing: border-box;
     vertical-align: middle;
     overflow: hidden;
+    color: #6395A2;
 }
     .item--even {
         background-color: rgba(255,255,255,.1);
@@ -135,7 +136,9 @@ nav {
         width: 75%;
     } 
     
-    
+.fav {
+    color: white;
+}  
 input.field--id {
     visibility: hidden;
     position: absolute;
@@ -169,6 +172,9 @@ input.field--id {
     }
     .button--edit {
         margin: 5px;
+    }
+    .button {
+        height: 3.5em;
     }
 
 }

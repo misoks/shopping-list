@@ -7,10 +7,9 @@
 <?php
     
     if (isset($_POST['add'])) {
-        if ( strlen($_POST['cat']) >= 1 )
-            {
-                add_cat();
-            }
+        if ( strlen($_POST['cat']) >= 1 ) {
+            add_cat();
+        }
         else { 
             echo "Please type in the category's name.";
         }
@@ -22,21 +21,20 @@
 ?>
 
 <form method="post" enctype="multipart/form-data" action="categories.php">
-        <table class="add-category">
-            <tr>
-                <td class="label field-label">Category</td>
-                <td class="field-cell"><input type="text" name="cat" class="field field--name"></td>
-                <td><input type="submit" name="add" value="Add" class="button button--small button--add"></td>
-            </tr>
-        </table>
-        
-    </form>
+    <table class="add-category">
+        <tr>
+            <td class="label field-label">Category</td>
+            <td class="field-cell"><input type="text" name="cat" class="field field--name"></td>
+            <td><input type="submit" name="add" value="Add" class="button button--small button--add"></td>
+        </tr>
+    </table>
+</form>
 
 
 <ul class="list list--categories">
-<?php
-    list_contents('Categories', FALSE);
-?>
+    <?php
+        list_contents('Categories', FALSE);
+    ?>
 </ul>
 <div class="button-bank button-bank--bottom">
     <form method="post" enctype="multipart/form-data" action="categories.php">
