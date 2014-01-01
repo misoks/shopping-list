@@ -93,7 +93,12 @@ function list_contents($table, $cat_id) {
         $item = (htmlentities($row[0]));
         $id = (htmlentities($row[1]));
         $marked = (htmlentities($row[2]));
-        $fav = (htmlentities($row[4]));
+        if ($table == "Categories") {
+            $fav = FALSE;
+        }
+        else {
+            $fav = (htmlentities($row[4]));
+        }
         if ($cat_id === FALSE) {
             $notes = '';
         }
@@ -115,9 +120,10 @@ function list_contents($table, $cat_id) {
                 }
                 echo "</label>";
         if ($table == "Items" or $table == "Favorites") {
+            $list = strtolower($table);
             echo "<button class='button button--edit' id='$id'>Edit</button>
-            <form method='post' enctype='multipart/form-data' id='form-$id' class='form--edit-item'>
-            <table class='edit-item form'>
+            <form method='post' enctype='multipart/form-data' id='form-$id' class='form--edit-item' action='".$list."processor.php'>";
+            echo "<table class='edit-item form'>
                 <tr>
                     <td class='field-label'>
                         <label for='item-cat'>Category</label>

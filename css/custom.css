@@ -1,4 +1,7 @@
 /* Global */
+.button {
+    max-width: 95%;
+}
 html {
     color: white;
 }
@@ -146,6 +149,15 @@ nav {
     .button--add-new {
         width: 75%;
     } 
+    .button--add {
+        width: 200px;
+        max-width: 70%;
+        margin-left: 0;
+    }
+    .field--category {
+        margin: .5em 0;
+        padding: .25em;
+    }
     
  
 input.field--id {
@@ -166,6 +178,12 @@ input.field--id {
 .form--new-item {
     margin: 1em 0;
 }
+    .field--name {
+        font-size: 20pt;
+    }
+    .field--category {
+
+    }
 @media screen and (max-width: 600px) {	
     body {
         font-size: 12pt;
@@ -182,9 +200,11 @@ input.field--id {
     .button--edit {
         margin: 5px;
     }
+
     .button {
         height: 2.8em;
     }
+
 
 }
 

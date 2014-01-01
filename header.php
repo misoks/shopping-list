@@ -2,6 +2,7 @@
 require_once "_setup/db.php";
 @include("functions.php");
 session_start();
+
 ?>
 
 <!DOCTYPE html>

@@ -8,7 +8,7 @@
     <tr>
         <td class="field-label"><label for="category-list">Category</label></td>
         <td class="field-cell">
-            <select name="category" id="category-list">
+            <select name="category" id="category-list" class="field field--category">
                 <option value="0">——</option>
                 <?php
                     $result = mysql_query("SELECT name, id FROM Categories");
@@ -23,6 +23,6 @@
     </tr>
     <tr>
         <td></td>
-        <td><input type="submit" name="add" value="Add" class="button button--small button--add"></td>
+        <td><input type="submit" name="add" value="Add" class="button button--add"></td>
     </tr>
 </table>
