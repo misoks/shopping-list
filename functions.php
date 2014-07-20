@@ -79,10 +79,10 @@ echo "</select>";
 
 // Lists contents of any list
 function list_contents($table, $cat_id) {
-    if ($cat_id === FALSE) {
+    if ($cat_id === FALSE) { // For listing Favorites and Categories
         $sql = "SELECT name, id, marked FROM $table ORDER BY name ASC";
     }
-    else {
+    else { //For listing regular items, grouped by category
         $sql = "SELECT name, id, marked, notes, favorite FROM $table WHERE category = '$cat_id' ORDER BY name ASC";
     }
     $result = mysql_query($sql);
@@ -110,7 +110,10 @@ function list_contents($table, $cat_id) {
             $class = "struck";
         }
         if ($fav == TRUE) {
-              $class = $class." fav";
+              $class = $class." item--fav";
+        }
+        else {
+            $class = $class." item--manual";
         }
         echo   "<li class='item item--$oddeven $class'>
                     <input type='checkbox' name='marked' class='check--$table marked-input' id='item-$id' value='$id' $status>
@@ -122,7 +125,7 @@ function list_contents($table, $cat_id) {
         if ($table == "Items" or $table == "Favorites") {
             $list = strtolower($table);
             echo "<button class='button button--edit' id='$id'>Edit</button>
-            <form method='post' enctype='multipart/form-data' id='form-$id' class='form--edit-item' action='".$list."processor.php'>";
+            <form method='post' enctype='multipart/form-data' id='form-$id' class='form--edit-item' style='display: none;' action='".$list."processor.php'>";
             echo "<table class='edit-item form'>
                 <tr>
                     <td class='field-label'>

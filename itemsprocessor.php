@@ -8,7 +8,7 @@ session_start();
         $name = $_POST['item'];
         $category = $_POST['category'];
         
-        if ( strlen($name) >= 1 )
+        if ( strlen($name) > 0 )
             {
                 add_item("Items");
             }
@@ -27,7 +27,7 @@ session_start();
     }
     if (isset($_POST['edit-save'])) {
         $category = $_POST['category'];
-        $notes = $_POST['notes'];
+        $notes = mysql_real_escape_string($_POST['notes']);
         $id = $_POST['item-id'];
         edit_item($id, $notes, $category, 'Items');
     }

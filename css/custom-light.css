@@ -4,19 +4,19 @@
 }
 
 html {
-    color: white;
+    color: gray;
 }
 body {
     font-family: 'Roboto', 'Helvetica Neue', Helvetica, arial, sans-serif;
 }
 .page--master {
-    background-color: black;
+    background-color: rgb(242, 247, 245);
 }
 .page--favorites {
-    background-color: rgb(2, 16, 49);
+    background-color: rgb(226, 232, 246)
 }
 .page--categories {
-    background-color: rgb(44, 23, 2);
+    background-color: rgb(247, 238, 229);
 }
 h1 {
     font-size: 1.5em;
@@ -27,7 +27,7 @@ h4 {
     font-size: .8em;
     text-transform: uppercase;
     color: rgb(150, 141, 125);
-    border-bottom: 2px solid rgb(23, 75, 92);
+    border-bottom: 1px solid rgba(124, 221, 216, .5);
 }
 
 a {
@@ -61,28 +61,24 @@ nav {
     padding: 0 .3em;
     vertical-align: middle;
     overflow: hidden;
+    color: rgb(78, 78, 78);
 }
-.item > label {
-    color: #5DCFEC;
-    width: 90%;
-}
-.fav > label {
-    color: white;
-} 
-.list--categories .item > label {
-    color: white;
-}
+    .item--manual {
+        color: #01CED6;
+    }
     .item--even {
-        background-color: rgba(255,255,255,.1);
+        background-color: rgba(0,0,0,.02);
     }
-    .struck label {
-        text-decoration: line-through;
-        color: lightgray;
-    }
-    .item label {
+    .item__label {
+        width: 90%;
         display: inline-block;
         top: 0;
         cursor: pointer;
+    }
+
+    .struck label {
+        text-decoration: line-through;
+        color: gray;
     }
     .item input {
         display: inline-block;
@@ -104,20 +100,18 @@ nav {
 .button {
     -webkit-appearance: none;
     border-radius: 0;
-    color: rgba(0,0,0,.6);
-    font-weight: bold;
-    background-color: #6395A2;
+    color: white;
+    background-color: #21B5C2;
     border: 0px solid rgba(78, 76, 76, 0.5);
     margin: 1%;
     border-radius: 1px;
     max-width: 95%;
     padding: 1em 2em;
+    box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+    text-transform: uppercase;
+    font-size: .8em;
 }
     .button:focus {outline:0;}
-    .button--small {
-        height: 1.8em;
-        font-size: .9em;
-    }
         .page--categories .button--add {
             margin-left: .5em;
         }
@@ -130,22 +124,22 @@ nav {
         display: inline-block;
         background-color: transparent;
         color: transparent;
-        background-image: url('edit.png');
+        background-image: url('edit-dark.png');
         background-repeat: no-repeat;
         background-position: center center;
         width: 6%;
         height: 38px;
+        box-shadow: none;
     }
     .button--add-favs {
         line-height: 1.15;
         width: 15%;
-        background-color: #DAAF42;
+        background-color: #F5D700;
     }
     .button--clear {
         width: 96%;
-        background-color: darkred;
+        background-color: rgb(219, 57, 57);
         margin: 2% 0;
-        color: rgba(255,255,255,.9);
     }
     .button--add-new {
         width: 75%;

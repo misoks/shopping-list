@@ -1,5 +1,6 @@
 <?php
 ?>
+<div id="add-item">
 <table class="add-item">
     <tr>
         <td class="field-label"><label for="item-name">Item</label></td>
@@ -26,3 +27,4 @@
         <td><input type="submit" name="add" value="Add" class="button button--add"></td>
     </tr>
 </table>
+</div>

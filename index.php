@@ -11,7 +11,7 @@
 <div class="button-bank button-bank--top">
     <button class="button button--add-new">Add New Item</button>
     <form method="post" enctype="multipart/form-data" action="itemsprocessor.php" class="form form--add-favs">
-        <input type="submit" name="addfavs" value="+★" class="button button--add-favs">
+        <input type="submit" name="addfavs" value="+ ★" class="button button--add-favs">
     </form>
 
 </div>

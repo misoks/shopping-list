@@ -4,19 +4,26 @@ $(document).ready(function() {
     	window.scrollTo(0, 0);
     }, 0);
     
-    /*$(function() {
-        $(document).scrollTop( $(".list--master").offset().top );  
-    });*/
-    $('.add-item').hide();
-    $('.form--edit-item').hide();
+    /* Hide this stuff on page load */
+    $('#add-item').hide();
+    /*$('.form--edit-item').hide();*/
+
+
+    /* Toggle the item open and closed when you click the pencil icon*/
     $('.button--edit').click(function() {
         var itemid = '#form-' + $(this).attr('id');
-        $(itemid).toggle();
+        $(itemid).slideToggle("fast");
     });
+
+    /*Toggle the Add New fields */
     $('.button--add-new').click(function() {
-        $('.add-item').toggle();
+        $('#add-item').slideToggle("fast");
     });
+
+    /* Behavior for checking an item */
      $(".marked-input").click(function() {
+
+            /* Figure out what type of item it is */
             if ($(this).hasClass('check--Items')) {
                 var check_table = 'Items';
             }
@@ -26,6 +33,8 @@ $(document).ready(function() {
             else if ($(this).hasClass('check--Categories')) {
                 var check_table = 'Categories';
             }
+
+            /* Style it */
             if($(this).is(':checked')) {
                 var check_marked = 1;
                 $(this).parent().addClass('struck').removeClass('unstruck');
@@ -34,6 +43,8 @@ $(document).ready(function() {
                 var check_marked = 0;
                 $(this).parent().removeClass('struck').addClass('unstruck');
             }        
+            
+            /* Mark the item as checked in the database */
             var check_id = $(this).attr('value');
             $.ajax({
                     type: "POST",
