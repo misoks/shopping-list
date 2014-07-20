@@ -60,7 +60,7 @@ function list_category($table) {
 function category_select($table, $item_id) {
     echo "<select name='category' id='item-cat'>
             <option value='0'>——</option>";
-    $result = mysql_query("SELECT name, id FROM Categories");
+    $result = mysql_query("SELECT name, id FROM Categories ORDER BY name ASC");
     $result2 = mysql_query("SELECT category FROM $table WHERE id ='$item_id'");
     while ( $row = mysql_fetch_row($result2) ) {
         $current = (htmlentities($row[0]));

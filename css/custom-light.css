@@ -106,7 +106,7 @@ nav {
     margin: 1%;
     border-radius: 1px;
     max-width: 95%;
-    padding: 1em 2em;
+    padding: .9em 1.8em;
     box-shadow: 1px 1px 4px rgba(0,0,0,.2);
     text-transform: uppercase;
     font-size: .8em;
@@ -145,8 +145,6 @@ nav {
         width: 75%;
     } 
     .button--add {
-        width: 200px;
-        max-width: 70%;
         margin-left: 0;
     }
     .field--category {

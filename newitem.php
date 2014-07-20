@@ -12,7 +12,7 @@
             <select name="category" id="category-list" class="field field--category">
                 <option value="0">——</option>
                 <?php
-                    $result = mysql_query("SELECT name, id FROM Categories");
+                    $result = mysql_query("SELECT name, id FROM Categories ORDER BY name ASC");
                     while ( $row = mysql_fetch_row($result) ) {
                         $category = (htmlentities($row[0]));
                         $cat_id = (htmlentities($row[1]));
