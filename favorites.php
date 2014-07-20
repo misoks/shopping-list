@@ -23,7 +23,7 @@
 
 <div class="button-bank button-bank--bottom">
     <form method="post" enctype="multipart/form-data" action="favoritesprocessor.php">
-        <input type="submit" name="delete" value="Remove selected from favorites" class="button button--clear">
+        <input type="submit" name="delete" value="Remove checked" class="button button--clear">
     </form>
 </div>
 

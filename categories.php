@@ -22,7 +22,7 @@
 </ul>
 <div class="button-bank button-bank--bottom">
     <form method="post" enctype="multipart/form-data" action="categoriesprocessor.php">
-        <input type="submit" name="delete" value="Remove selected categories" class="button button--clear">
+        <input type="submit" name="delete" value="Remove checked" class="button button--clear">
     </form>
 </div>
 

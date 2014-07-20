@@ -9,6 +9,9 @@ html {
 body {
     font-family: 'Roboto', 'Helvetica Neue', Helvetica, arial, sans-serif;
 }
+form {
+    display: inline;
+}
 .page--master {
     background-color: rgb(242, 247, 245);
 }
@@ -52,6 +55,7 @@ nav {
 .list {
     list-style-type: none;
     padding: 0;
+    overflow: hidden;
 }
 
 .item {
@@ -63,7 +67,7 @@ nav {
     overflow: hidden;
     color: rgb(78, 78, 78);
 }
-    .item--manual {
+    .page--master .item--manual {
         color: #01CED6;
     }
     .item--even {
@@ -103,10 +107,9 @@ nav {
     color: white;
     background-color: #21B5C2;
     border: 0px solid rgba(78, 76, 76, 0.5);
-    margin: 1%;
+    margin: 0 1%;
     border-radius: 1px;
-    max-width: 95%;
-    padding: .9em 1.8em;
+    padding: .9em 1.8em 1em;
     box-shadow: 1px 1px 4px rgba(0,0,0,.2);
     text-transform: uppercase;
     font-size: .8em;
@@ -130,16 +133,19 @@ nav {
         width: 6%;
         height: 38px;
         box-shadow: none;
+        opacity: .6;
     }
     .button--add-favs {
         line-height: 1.15;
-        width: 15%;
         background-color: #F5D700;
     }
     .button--clear {
         width: 96%;
         background-color: rgb(219, 57, 57);
-        margin: 2% 0;
+    }
+    .page--master .button--clear {
+        width: auto;
+        display: inline-block;
     }
     .button--add-new {
         width: 75%;
@@ -151,7 +157,9 @@ nav {
         margin: .5em 0;
         padding: .25em;
     }
-    
+.add-item {
+    margin-top: .75em;
+}   
  
 input.field--id {
     visibility: hidden;
@@ -195,7 +203,6 @@ input.field--id {
     }
 
     .button {
-        height: 2.8em;
     }
 
 

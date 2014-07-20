@@ -11,7 +11,7 @@
 <div class="button-bank button-bank--top">
     <button class="button button--add-new">Add New Item</button>
     <form method="post" enctype="multipart/form-data" action="itemsprocessor.php" class="form form--add-favs">
-        <input type="submit" name="addfavs" value="+ ★" class="button button--add-favs">
+        <input type="submit" name="addfavs" value="★" class="button button--add-favs">
     </form>
 
 </div>
@@ -29,11 +29,11 @@
 
 <div class="button-bank button-bank--bottom">
     <form method="post" enctype="multipart/form-data" action="itemsprocessor.php">
-        <input type="submit" name="selectall" value="Select All" class="button button--select-all">
+        <input type="submit" name="selectall" value="Check All" class="button button--select-all">
     </form>
 
     <form method="post" enctype="multipart/form-data" action="itemsprocessor.php">
-        <input type="submit" name="clear" value="Remove checked items" class="button button--clear">
+        <input type="submit" name="clear" value="Remove checked" class="button button--clear">
     </form>
 </div>
 
