@@ -13,7 +13,7 @@
 <div class="container">
 
 <div class="button-bank">
-    <button class="button button--add-new">+</button>
+    <button class="button button--add-new"></button>
     <form method="post" enctype="multipart/form-data" action="itemsprocessor.php" class="form form--add-favs">
         <input type="submit" name="addfavs" value="+ Add Favorites" class="button button--add-favs button--flat button--flat--faux">
     </form>

@@ -9,7 +9,7 @@
 <div class="container">
 
 <div class="button-bank button-bank--top">
-    <button class="button button--add-new">+</button>
+    <button class="button button--add-new"></button>
 </div>
 
 

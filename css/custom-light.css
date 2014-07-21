@@ -34,7 +34,7 @@ h4 {
 }
 
 a {
-    color: rgb(255, 225, 3);
+    color: rgb(233, 168, 1);
     text-decoration: none;
     text-shadow: 1px 1px 0px white;
 }
@@ -58,7 +58,7 @@ nav {
         margin-right: 10px;
     }
         .nav-link.current {
-            border-top: 5px solid #FFD600
+            border-top: 5px solid rgb(233, 168, 1);
         }
 
 .list {
@@ -77,7 +77,7 @@ nav {
     
 }
     .page--master .item--manual > label{
-        color: #01CED6;
+        color: #00A7AD;
     }
     .item--even {
         background-color: rgba(0,0,0,.02);
@@ -156,14 +156,21 @@ select {
     }
     .button--add-new {
         border-radius: 100px;
-        padding:.4em .7em;
+        width: 45px;
+        height: 45px;
+        padding: 0;
         position: fixed;
         bottom: 15px;
         right: 5px;
         z-index: 100;
         color: white;
         background-color: #21B5C2;
-        font-size: 1.5em;
+        font-size: 1.3em;
+        line-height: 1;
+        background-image: url('plus.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 27px;
     } 
     .button--flat {
         box-shadow: none;
@@ -226,7 +233,7 @@ input.field--id {
     .add-modal--box {
         width: 300px;
         max-width: 90%;
-        margin: 25% auto;
+        margin: 35% auto;
         background-color: #f9f9f9;
         padding: .5em 1em .1em 1em;
         border-radius: 2px;
@@ -250,7 +257,7 @@ input.field--id {
         font-size: .9em;
     }
     .button--add-new {
-        font-size: 1.5em;
+        font-size: 1.3em;
     } 
 
 }
