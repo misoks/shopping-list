@@ -233,7 +233,7 @@ input.field--id {
     .add-modal--box {
         width: 300px;
         max-width: 90%;
-        margin: 35% auto;
+        margin: 20% auto;
         background-color: #f9f9f9;
         padding: .5em 1em .1em 1em;
         border-radius: 2px;
@@ -259,6 +259,9 @@ input.field--id {
     .button--add-new {
         font-size: 1.3em;
     } 
+    .add-modal--box {
+        margin: 35% auto;
+    }
 
 }
 
