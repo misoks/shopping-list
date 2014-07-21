@@ -2,14 +2,16 @@
     $page_title = "Favorites";
     $page_class = "page page--favorites";
     include_once("header.php");
+    gen_add_form("favorites");
+    include_once("nav.php");
 ?>
 
+<div class="container">
+
 <div class="button-bank button-bank--top">
-    <button class="button button--add-new">Add New Favorite</button>
+    <button class="button button--add-new">+</button>
 </div>
-<form method="post" enctype="multipart/form-data" action="favoritesprocessor.php" class="form--new-item">
-    <?php include_once('newitem.php'); ?>
-</form>
+
 
 
 
@@ -21,7 +23,7 @@
 ?>
 </ul>
 
-<div class="button-bank button-bank--bottom">
+<div class="button-bank">
     <form method="post" enctype="multipart/form-data" action="favoritesprocessor.php">
         <input type="submit" name="delete" value="Remove checked" class="button button--clear">
     </form>

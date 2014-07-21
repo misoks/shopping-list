@@ -145,7 +145,7 @@ function list_contents($table, $cat_id) {
                         <input type="text" name="notes" id="item-notes" class="field field--notes" value="'.$notes.'">
                     </td></tr><tr><td></td>
                     <td>
-                        <input type="submit" name="edit-save" value="Save" class="button button--small button--save-item">
+                        <input type="submit" name="edit-save" value="Save" class="button button--flat button--flat--faux button--flat--primary">
                     </td>
                 </tr>
                 
@@ -156,6 +156,13 @@ function list_contents($table, $cat_id) {
         if ( $oddeven == "odd" ) { $oddeven = "even"; }
         else { $oddeven = "odd"; }
     }
+}
+
+function gen_add_form($page) {
+    $processor = $page."processor.php";
+    echo '<form method="post" enctype="multipart/form-data" action="'.$processor.'" class="form--new-item">';
+    include_once('newitem.php');
+    echo '</form>';
 }
 
 

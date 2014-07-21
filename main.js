@@ -3,11 +3,6 @@ $(document).ready(function() {
 	setTimeout(function(){
     	window.scrollTo(0, 0);
     }, 0);
-    
-    /* Hide this stuff on page load */
-    $('#add-item').hide();
-    /*$('.form--edit-item').hide();*/
-
 
     /* Toggle the item open and closed when you click the pencil icon*/
     $('.button--edit').click(function() {
@@ -16,8 +11,15 @@ $(document).ready(function() {
     });
 
     /*Toggle the Add New fields */
+    $("#new-item-cancel").click(function() {
+        $('#add-item').hide();
+        $('.button--add-new').show();
+        $('#item-name').val("");
+        $('#category-list').val("");
+    });
     $('.button--add-new').click(function() {
-        $('#add-item').slideToggle("fast");
+        $('#add-item').toggle();
+        $(this).hide();
     });
 
     /* Behavior for checking an item */

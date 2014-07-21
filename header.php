@@ -27,17 +27,9 @@ session_start();
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
     </head>
     <body class="<?php echo $page_class; ?>">
-    <div class="container">
-    <header class="page-header">
-                <nav>
-            <?php
-                echo navLink('index.php', 'List');
-                echo navLink('favorites.php', 'Favorites');
-                echo navLink('categories.php', 'Categories');
-            ?>
-        </nav>
-        
-    </header>
+
+    
+    
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->

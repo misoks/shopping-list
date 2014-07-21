@@ -1,24 +1,25 @@
 <?php 
     $page_title = "Shopping List";
     $page_class = "page page--master";
-    include_once("header.php");
 
+    include_once("header.php");
+    gen_add_form("items");
+    include_once("nav.php");
     $item = '';
     $marked = '0';
     
 ?>
+    
+<div class="container">
 
-<div class="button-bank button-bank--top">
-    <button class="button button--add-new">Add New Item</button>
+<div class="button-bank">
+    <button class="button button--add-new">+</button>
     <form method="post" enctype="multipart/form-data" action="itemsprocessor.php" class="form form--add-favs">
-        <input type="submit" name="addfavs" value="★" class="button button--add-favs">
+        <input type="submit" name="addfavs" value="+ Add Favorites" class="button button--add-favs button--flat button--flat--faux">
     </form>
-
 </div>
-<form method="post" enctype="multipart/form-data" action="itemsprocessor.php" class="form--new-item">
-    <?php include_once('newitem.php'); ?>
-</form>
 
+   
 <ul class="list list--master">
 <?php
     list_category('Items');
@@ -27,10 +28,7 @@
 ?>
 </ul>
 
-<div class="button-bank button-bank--bottom">
-    <form method="post" enctype="multipart/form-data" action="itemsprocessor.php">
-        <input type="submit" name="selectall" value="Check All" class="button button--select-all">
-    </form>
+<div class="button-bank">
 
     <form method="post" enctype="multipart/form-data" action="itemsprocessor.php">
         <input type="submit" name="clear" value="Remove checked" class="button button--clear">

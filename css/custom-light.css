@@ -4,25 +4,25 @@
 }
 
 html {
-    color: gray;
 }
 body {
     font-family: 'Roboto', 'Helvetica Neue', Helvetica, arial, sans-serif;
+    background-color: #f9f9f9;
+    position: relative;
+    color: rgb(78, 78, 78);
+    padding-bottom: 3em;
 }
 form {
     display: inline;
 }
-.page--master {
-    background-color: rgb(242, 247, 245);
-}
-.page--favorites {
-    background-color: rgb(226, 232, 246)
-}
-.page--categories {
-    background-color: rgb(247, 238, 229);
-}
+
 h1 {
     font-size: 1.5em;
+    font-weight: 300;
+}
+h3 {
+    margin: 0;
+    font-weight: normal;
 }
 h4 {
     margin: 1.2em 0 0 0;
@@ -34,23 +34,32 @@ h4 {
 }
 
 a {
-    color: rgb(255, 173, 0);
+    color: rgb(255, 225, 3);
     text-decoration: none;
+    text-shadow: 1px 1px 0px white;
+}
+ul {
+    margin-top: .5em;
 }
 
 .container {
-    padding: .5em 0 1em;
+    margin: auto;
+    max-width: 700px;
 }
 nav {
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: .5em;
+    padding-top: 5px;
 }
-.nav-link {
-    display: inline;
-    margin: 0;
-    padding: 0;
-    margin-right: 10px;
-}
+    .nav-link {
+        display: inline;
+        margin: 0;
+        padding: 0 .5em;
+        margin-right: 10px;
+    }
+        .nav-link.current {
+            border-top: 5px solid #FFD600
+        }
 
 .list {
     list-style-type: none;
@@ -65,9 +74,9 @@ nav {
     padding: 0 .3em;
     vertical-align: middle;
     overflow: hidden;
-    color: rgb(78, 78, 78);
+    
 }
-    .page--master .item--manual {
+    .page--master .item--manual > label{
         color: #01CED6;
     }
     .item--even {
@@ -97,22 +106,24 @@ nav {
     text-align: right;
     padding-right: .3em;
 }
-
-.button-bank {
-    text-align: center;
+select {
+    max-width: 200px;
 }
+
 .button {
     -webkit-appearance: none;
     border-radius: 0;
-    color: white;
-    background-color: #21B5C2;
+    background-color: #f9f9f9;
     border: 0px solid rgba(78, 76, 76, 0.5);
     margin: 0 1%;
-    border-radius: 1px;
-    padding: .9em 1.8em 1em;
-    box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+    border-radius: 2px;
+    padding: .75em 1.6em .76em;
+    box-shadow: 1px 1px 5px rgba(0,0,0,.4);
     text-transform: uppercase;
-    font-size: .8em;
+    font-size: .75em;
+    color: rgb(82, 81, 81);
+    letter-spacing: 1px;6);
+    letter-spacing: 1px;
 }
     .button:focus {outline:0;}
         .page--categories .button--add {
@@ -137,26 +148,51 @@ nav {
     }
     .button--add-favs {
         line-height: 1.15;
-        background-color: #F5D700;
     }
     .button--clear {
-        width: 96%;
         background-color: rgb(219, 57, 57);
-    }
-    .page--master .button--clear {
-        width: auto;
+        color: white;
         display: inline-block;
     }
     .button--add-new {
-        width: 75%;
+        border-radius: 100px;
+        padding:.4em .7em;
+        position: fixed;
+        bottom: 15px;
+        right: 5px;
+        z-index: 100;
+        color: white;
+        background-color: #21B5C2;
+        font-size: 1.5em;
     } 
-    .button--add {
-        margin-left: 0;
+    .button--flat {
+        box-shadow: none;
+        text-align: right;
+        font-size: .85em;
+        padding: .5em;
     }
-    .field--category {
-        margin: .5em 0;
-        padding: .25em;
+        .button--flat--primary {
+            color: #00DCF0;
+        }
+    .button--cancel {
+        color: rgb(78, 78, 78);
     }
+.button-bank {
+    text-align: center;
+}
+.add-modal .button-bank {
+    margin: 1.5em 0 .5em;
+}
+    .button-bank--left {
+        text-align: left;
+    }
+    .button-bank--right {
+        text-align: right;
+    }
+.field--category {
+    margin: .5em 0;
+    padding: .25em;
+}
 .add-item {
     margin-top: .75em;
 }   
@@ -179,12 +215,24 @@ input.field--id {
 .form--new-item {
     margin: 1em 0;
 }
-    .field--name {
-        font-size: 20pt;
-    }
-    .field--category {
 
+.add-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.3);
+    position: fixed;
+    z-index: 100;
+}
+    .add-modal--box {
+        width: 300px;
+        max-width: 90%;
+        margin: 25% auto;
+        background-color: #f9f9f9;
+        padding: .5em 1em .1em 1em;
+        border-radius: 2px;
+        box-shadow: 2px 2px 40px rgba(0,0,0,.4);
     }
+
 @media screen and (max-width: 600px) {	
     body {
         font-size: 12pt;
@@ -198,13 +246,12 @@ input.field--id {
     input[type=text] {
         max-width: 8em;
     }
-    .button--edit {
-        margin: 5px;
-    }
-
     .button {
+        font-size: .9em;
     }
-
+    .button--add-new {
+        font-size: 1.5em;
+    } 
 
 }
 
@@ -213,7 +260,6 @@ input.field--id {
         font-size: 12pt;
     }
     .container {
-        margin: 0 auto;
         max-width: 700px;
     }
     .item label {
