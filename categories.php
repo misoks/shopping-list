@@ -7,10 +7,10 @@
 ?>
 <div class="container">
 <form method="post" enctype="multipart/form-data" action="categoriesprocessor.php">
-    <table class="add-category">
+    <table class="form--add-category">
         <tr>
-            <td class="label field-label">Category</td>
-            <td class="field-cell"><input type="text" name="cat" class="field field--name"></td>
+            <td class="form__label">Category</td>
+            <td class="form__value"><input type="text" name="cat" class="field field--name"></td>
             <td><input type="submit" name="add" value="Add" class="button button--flat button--flat--faux"></td>
         </tr>
     </table>

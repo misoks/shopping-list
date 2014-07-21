@@ -1,9 +1,10 @@
-/* Global */
+/* 
+    Built with love by Cathy Fisher 2013-2014 
+*/
+
+
 * {
     box-sizing: border-box;
-}
-
-html {
 }
 body {
     font-family: 'Roboto', 'Helvetica Neue', Helvetica, arial, sans-serif;
@@ -12,41 +13,36 @@ body {
     color: rgb(78, 78, 78);
     padding-bottom: 3em;
 }
-form {
-    display: inline;
-}
-
-h1 {
-    font-size: 1.5em;
-    font-weight: 300;
-}
-h3 {
-    margin: 0;
-    font-weight: normal;
-}
-h4 {
-    margin: 1.2em 0 0 0;
-    padding: .1em .5em;
-    font-size: .8em;
-    text-transform: uppercase;
-    color: rgb(150, 141, 125);
-    border-bottom: 1px solid rgba(124, 221, 216, .5);
-}
 
 a {
-    color: rgb(233, 168, 1);
+    color: white;
     text-decoration: none;
-    text-shadow: 1px 1px 0px white;
-}
-ul {
-    margin-top: .5em;
 }
 
+
+
+
+/*========================================================================
+   STRUCTURE
+========================================================================*/
 .container {
     margin: auto;
     max-width: 700px;
 }
-nav {
+.page-header {
+    background-color: rgb(233, 168, 1);
+    overflow: hidden;
+    box-shadow: 0px 1px 10px rgba(0,0,0,.3);
+}
+    .page--favorites .page-header {
+        background-color: rgb(219, 61, 156);
+    }
+    .page--categories .page-header {
+        background-color: rgb(101, 190, 101);
+    }
+
+/* Navigation */
+.nav {
     text-align: center;
     margin-bottom: .5em;
     padding-top: 5px;
@@ -57,59 +53,93 @@ nav {
         padding: 0 .5em;
         margin-right: 10px;
     }
-        .nav-link.current {
-            border-top: 5px solid rgb(233, 168, 1);
-        }
+    .nav-link.current {
+        font-size: 1.5em;
+        font-weight: 300;
+    }
 
+
+
+/*========================================================================
+    ITEM LIST
+========================================================================*/
 .list {
+    margin-top: .5em;
     list-style-type: none;
     padding: 0;
     overflow: hidden;
 }
+    .list__category-header {
+        margin: 1.2em 0 0 0;
+        padding: .1em .5em;
+        font-size: .8em;
+        text-transform: uppercase;
+        color: rgb(150, 141, 125);
+        border-bottom: 1px solid rgba(124, 221, 216, .5);
+    }
+    .page--master .list__category-header:first-child {
+        margin-top: 0;
+    }
+    .item {
+        display: block;
+        width: 100%;
+        position: relative;
+        padding: 0 .3em;
+        vertical-align: middle;
+        overflow: hidden;
+        
+    }
+        .item--even {
+            background-color: rgba(0,0,0,.02);
+        }
+        .item__label {
+            width: 90%;
+            display: inline-block;
+            top: 0;
+            cursor: pointer;
+        }
+            /* Label for a manually-added item */
+            .page--master .item--manual > .item__label {
+                color: #00A7AD;
+            }
+            /* Label for checked item */
+            .struck .item__label {
+                text-decoration: line-through;
+                color: gray;
+            }
 
-.item {
-    display: block;
-    width: 100%;
-    position: relative;
-    padding: 0 .3em;
-    vertical-align: middle;
-    overflow: hidden;
-    
-}
-    .page--master .item--manual > label{
-        color: #00A7AD;
-    }
-    .item--even {
-        background-color: rgba(0,0,0,.02);
-    }
-    .item__label {
-        width: 90%;
-        display: inline-block;
-        top: 0;
-        cursor: pointer;
-    }
 
-    .struck label {
-        text-decoration: line-through;
-        color: gray;
+/*========================================================================
+   FORMS
+========================================================================*/
+form {
+    display: inline;
+}
+.form--new-item {
+    margin: 1em 0;
+}
+.form--add-category {
+    margin: 10px auto 0;
+}
+    .form__label {
+        font-size: .7em;
+        text-transform: uppercase;
+        text-align: right;
+        padding-right: .3em;
     }
-    .item input {
-        display: inline-block;
-        cursor: pointer;
+    .form__value {
+        padding: .3em .2em;
     }
-.field-entry {
-    padding-left: 0em;
-}
-.field-label {
-    font-size: .7em;
-    text-transform: uppercase;
-    text-align: right;
-    padding-right: .3em;
-}
-select {
-    max-width: 200px;
-}
+        .field--category {
+            max-width: 200px;
+            margin: .5em 0;
+        }
 
+
+
+/*========================================================================
+   BUTTONS
+========================================================================*/
 .button {
     -webkit-appearance: none;
     border-radius: 0;
@@ -122,14 +152,24 @@ select {
     text-transform: uppercase;
     font-size: .75em;
     color: rgb(82, 81, 81);
-    letter-spacing: 1px;6);
     letter-spacing: 1px;
 }
-    .button:focus {outline:0;}
-        .page--categories .button--add {
-            margin-left: .5em;
+
+    /* Flat buttons */
+     .button--flat {
+        box-shadow: none;
+        text-align: right;
+        font-size: .85em;
+        padding: .5em;
+        background-color: transparent;
+    }
+        .button--flat--primary {
+            color: #00A7AD;
         }
-    .button.button--edit {
+
+
+    /* Specific buttons */    
+    .button--edit { /* Edit pencil button */
         font-size: 0;
         border: 0;
         padding: 0;
@@ -146,15 +186,12 @@ select {
         box-shadow: none;
         opacity: .6;
     }
-    .button--add-favs {
-        line-height: 1.15;
-    }
-    .button--clear {
+    .button--clear { /* Removed Checked button */
         background-color: rgb(219, 57, 57);
         color: white;
         display: inline-block;
     }
-    .button--add-new {
+    .button--add-new { /* Circular + button */
         border-radius: 100px;
         width: 45px;
         height: 45px;
@@ -172,23 +209,13 @@ select {
         background-repeat: no-repeat;
         background-size: 27px;
     } 
-    .button--flat {
-        box-shadow: none;
-        text-align: right;
-        font-size: .85em;
-        padding: .5em;
+    .button--add-favs {
+        margin-top: .5em;
     }
-        .button--flat--primary {
-            color: #00DCF0;
-        }
-    .button--cancel {
-        color: rgb(78, 78, 78);
-    }
+
+/* Button container */
 .button-bank {
     text-align: center;
-}
-.add-modal .button-bank {
-    margin: 1.5em 0 .5em;
 }
     .button-bank--left {
         text-align: left;
@@ -196,42 +223,29 @@ select {
     .button-bank--right {
         text-align: right;
     }
-.field--category {
-    margin: .5em 0;
-    padding: .25em;
-}
-.add-item {
-    margin-top: .75em;
-}   
- 
-input.field--id {
-    visibility: hidden;
-    position: absolute;
-}
-
-    .form--add-favs {
-        display: inline;
+    .modal .button-bank {
+        margin: 1.5em 0 .5em;
     }
 
-.edit-item {
-    margin-bottom: .5em;
-}
-.add-category {
-    margin: 10px auto 0;
-}
-.form--new-item {
-    margin: 1em 0;
-}
 
-.add-modal {
+
+/*========================================================================
+   MODAL
+========================================================================*/
+
+.modal {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,.3);
     position: fixed;
     z-index: 100;
 }
-    .add-modal--box {
-        width: 300px;
+    .modal__header {
+        margin: 0;
+        font-weight: normal;
+    }
+    .modal__content {
+        width: 310px;
         max-width: 90%;
         margin: 20% auto;
         background-color: #f9f9f9;
@@ -239,6 +253,14 @@ input.field--id {
         border-radius: 2px;
         box-shadow: 2px 2px 40px rgba(0,0,0,.4);
     }
+    .modal__form {
+        margin-top: .75em;
+    }   
+
+
+/*========================================================================
+   RESPONSIVE
+========================================================================*/
 
 @media screen and (max-width: 600px) {	
     body {
@@ -278,4 +300,18 @@ input.field--id {
     .button--edit {
         margin: 0;
     }
+}
+
+
+/*========================================================================
+   HELPERS
+========================================================================*/
+
+.button:focus { /* Remove default focus styling on buttons */
+    outline:0;
+}
+
+input.field--id { /* Hide the ID field */
+    visibility: hidden;
+    position: absolute;
 }

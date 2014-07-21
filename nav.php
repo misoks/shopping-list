@@ -2,7 +2,7 @@
 ?>
 
 <header class="page-header">
-    <nav>
+    <nav class="nav">
         <?php
             echo navLink('index.php', 'List');
             echo navLink('favorites.php', 'Favorites');

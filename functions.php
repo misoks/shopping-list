@@ -51,7 +51,7 @@ function list_category($table) {
     while ( $row = mysql_fetch_row($result) ) {
         $category = (htmlentities($row[0]));
         $id = (htmlentities($row[1]));
-        echo "<h4>$category</h4>";
+        echo "<h4 class='list__category-header'>$category</h4>";
         list_contents($table, $id);
     }
 }
@@ -128,20 +128,20 @@ function list_contents($table, $cat_id) {
             <form method='post' enctype='multipart/form-data' id='form-$id' class='form--edit-item' style='display: none;' action='".$list."processor.php'>";
             echo "<table class='edit-item form'>
                 <tr>
-                    <td class='field-label'>
+                    <td class='form__label'>
                         <label for='item-cat'>Category</label>
                     </td>
-                    <td class='field-entry'>";
+                    <td class='form__value'>";
                     category_select($table, $id);
                     echo "</td>
                 </tr>
                 <tr>
-                    <td class='field-label'>
+                    <td class='form__label'>
                         <input type='text' name='item-id' class='field field--id' value='$id'>
                         <label for='item-notes'>Notes</label>
                     </td>";
                 
-                echo '<td class="field-entry">
+                echo '<td class="form__value">
                         <input type="text" name="notes" id="item-notes" class="field field--notes" value="'.$notes.'">
                     </td></tr><tr><td></td>
                     <td>

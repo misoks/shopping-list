@@ -12,13 +12,14 @@ $(document).ready(function() {
 
     /*Toggle the Add New fields */
     $("#new-item-cancel").click(function() {
-        $('#add-item').hide();
-        $('.button--add-new').show();
+        $('#add-modal').hide();
+        $('#add-button').show();
         $('#item-name').val("");
         $('#category-list').val("");
     });
-    $('.button--add-new').click(function() {
-        $('#add-item').toggle();
+    $('#add-button').click(function() {
+        $('#add-modal').show();
+        $( ".field--name" ).focus();
         $(this).hide();
     });
 

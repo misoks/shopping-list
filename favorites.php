@@ -9,7 +9,7 @@
 <div class="container">
 
 <div class="button-bank button-bank--top">
-    <button class="button button--add-new"></button>
+    <button class="button button--add-new" id="add-button"></button>
 </div>
 
 
@@ -18,7 +18,7 @@
 <ul class="list list--favorites">
 <?php
     list_category('Favorites');
-    echo "<h4>Other</h4>";
+    echo "<h4 class='list__category-header'>Other</h4>";
     list_contents('Favorites', '0');
 ?>
 </ul>
