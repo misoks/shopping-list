@@ -1,5 +1,5 @@
 <?php
-require_once "_setup/db.php";
+require_once "db.php";
 @include("functions.php");
 session_start();
 
@@ -22,14 +22,14 @@ session_start();
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/custom-light.css">
         <link rel="stylesheet" href="css/helpers.css">
-        
+
         <link rel="shortcut icon" href="favicon.png" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
     </head>
     <body class="<?php echo $page_class; ?>">
 
-    
-    
+
+
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->

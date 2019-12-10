@@ -1,0 +1,21 @@
+version: '2'
+services:
+  mysql:
+    build:
+      context: .
+    environment:
+      - MYSQL_ROOT_PASSWORD=shopping123
+      - MYSQL_DATABASE=shopping
+      - MYSQL_USER=shopping
+      - MYSQL_PASSWORD=shopping123
+    restart: always
+    volumes:
+      - ./mysql-data:/application
+  php:
+    image: php:5.3-apache
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - 6981:80
+    depends_on:
+      - mysql

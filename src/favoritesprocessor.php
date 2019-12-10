@@ -1,17 +1,17 @@
 <?php
-require_once "_setup/db.php";
+require_once "db.php";
 @include("functions.php");
 
 
     if (isset($_POST['add'])) {
         $name = $_POST['item'];
         $category = $_POST['category'];
-        
+
         if ( strlen($_POST['item']) >= 1 )
             {
                 add_item('Favorites');
             }
-        else { 
+        else {
             echo "Please type in the item's name.";
         }
     }
