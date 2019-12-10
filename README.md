@@ -7,7 +7,7 @@ categories and customizable notes.
 
 To install manually:
   - Create a SQL database on your server and run _setup/createtables.sql on it
-  - Open up _setup/db-setup.php and follow the instructions
+  - Open up src/db.php and follow the instructions
   - Copy src to webroot
 
 To run with docker:
