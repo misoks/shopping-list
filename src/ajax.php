@@ -1,5 +1,5 @@
-<?php 
-require_once "_setup/db.php";
+<?php
+require_once "db.php";
 
     $marked = $_POST['marked'];
     $id = $_POST['id'];

@@ -1,5 +1,5 @@
 <?php
-require_once "_setup/db.php";
+require_once "db.php";
 @include("functions.php");
 
 
@@ -7,7 +7,7 @@ require_once "_setup/db.php";
         if ( strlen($_POST['cat']) >= 1 ) {
             add_cat();
         }
-        else { 
+        else {
             echo "Please type in the category's name.";
         }
     }
